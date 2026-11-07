@@ -1,6 +1,48 @@
 # {devspace} — developer portfolio
 
+**Live site:** https://dagmawi1-lang.github.io/devspace/
+
 A fast, accessible portfolio site in **plain HTML, CSS, and JavaScript** (no frameworks, no build step). It brings all my projects together in one place for admissions reviewers, mentors, and hackathon judges.
+
+## All projects
+
+| Project | Type | Status | Description |
+|---|---|---|---|
+| [Sentinel](https://github.com/dagmawi1-lang/sentinel) | Personal | ✅ Complete | Personal security monitoring platform: parses SSH/auth logs, detects brute force, password spraying, and likely account compromise, tracks incidents in SQLite, and has a review dashboard. |
+| [CoreSim](https://github.com/dagmawi1-lang/coresim) | Personal | ✅ Complete | CPU instruction simulator for a 16-bit CPU I designed (CS16): two-pass assembler, flags, stack, CALL/RET, interactive stepper, and an HTML trace viewer. |
+| [NetWatch](https://github.com/dagmawi1-lang/netwatch) | Personal | ✅ Complete | Network monitoring and simulation: topology-aware outage root-cause analysis, flapping, latency and traffic anomalies, port scans, and rogue devices. |
+| [SecureDB](https://github.com/dagmawi1-lang/securedb) | Personal | ✅ Complete | School-records database with role-based and row-level access, SQL-injection-safe queries, and a tamper-evident hash-chained audit log written by triggers. |
+| [SysGuard](https://github.com/dagmawi1-lang/sysguard) | Personal | ✅ Complete | Bash collector reading /proc plus a Python analyzer that spots crypto-miners in /tmp, fork bombs, memory leaks, CPU hogs, and new open ports. |
+| [MemorySafe](https://github.com/dagmawi1-lang/memorysafe) | Personal | ✅ Complete | Rust demonstrator of ownership, borrowing, safe data structures, RAII, errors, and fearless concurrency, with compile-fail tests proving bugs don't compile. |
+| [DataMind](https://github.com/dagmawi1-lang/datamind) | Personal | ✅ Complete | Automated data analysis: cleans messy CSV/Excel data with a change log, finds robust patterns, draws charts, and writes a plain-language report. |
+| [WasteLens](https://github.com/dagmawi1-lang/wastelens) | Arbiter Hacks V1 | 🛠️ In progress | Waste-sorting assistant: classifies a photo, explains preparation and disposal, lets people correct it, and includes a consent-based dataset and training pipeline. |
+| [OutbreakIQ](https://github.com/dagmawi1-lang/outbreakiq) | DSH Hacks | 🛠️ In progress | Explores CDC NNDSS disease-reporting data and flags statistical anomalies as review signals, with clear limits. |
+| [BridgeUp](https://github.com/dagmawi1-lang/bridgeup) | CSC Winter Sparkathon | 🛠️ In progress | Community support matching with explainable scores, consent-gated private messaging, live updates, and moderation with an audit log. |
+| [ProofPath](https://github.com/dagmawi1-lang/proofpath) | STEM2Connect AI Hackathon | 🛠️ In progress | Student research workspace: evidence checklists, a claim map showing supporting vs challenging sources, APA/MLA citations, and an optional AI coach. |
+| [FixForward](https://github.com/dagmawi1-lang/fixforward) | STEMergent Hacks | 🛠️ In progress | Community maintenance board with duplicate detection, explainable priority, status history, and action-brief export. |
+| [ClearTask](https://github.com/dagmawi1-lang/cleartask) | Global AI Builder's Challenge | 🛠️ In progress | Task planner that breaks assignments into steps with time estimates and optional AI planning. |
+| [DevSpace](https://github.com/dagmawi1-lang/devspace) | Personal | ✅ Complete | This portfolio: a framework-free site with live in-browser demos of CoreSim and Sentinel, project write-ups, and a live list of my GitHub repos. |
+| CivicEco | Personal | 🛠️ In progress | Environmental intelligence platform: report local environmental issues on a map, verify evidence with community confirmations, spot hotspots and early warnings, and coordinate response plans. |
+| SchoolSync | Personal | 🛠️ In progress | Student productivity platform: dashboard, announcements, study resources, college planning, scholarships, and clubs in one place. |
+| PhishProof | IceHacks | 🗓️ Planned | Phishing-awareness training that teaches people to spot the warning signs in realistic, safe practice messages. |
+| AccessLens | NorCal Hacks 27 | 🗓️ Planned | Privacy-first accessibility review companion that helps makers find and fix accessibility problems. |
+| Pathways | Bridge The Gap Hacks | 🗓️ Planned | Helps students discover opportunities such as programs, scholarships, and competitions, and plan the steps to reach them. |
+| KindQuest | Checkpoint 1: Games for Good | 🗓️ Planned | Interactive game about teamwork and inclusion. |
+
+## Competitions (10)
+
+| Competition | Project | When |
+|---|---|---|
+| Arbiter Hacks V1 | WasteLens | Nov 2026 |
+| DSH Hacks | OutbreakIQ | 2026 |
+| STEMergent Hacks | FixForward | Nov 2026 |
+| STEM2Connect AI Hackathon | ProofPath | Nov 2026 |
+| IceHacks | PhishProof | Nov 2026 |
+| NorCal Hacks 27 | AccessLens | Nov 2026 |
+| Bridge The Gap Hacks | Pathways | Nov 2026 |
+| Global AI Builder's Challenge | ClearTask | Nov 2026 |
+| CSC Winter Sparkathon | BridgeUp | Winter 2026 |
+| Checkpoint 1: Games for Good | KindQuest | Jan 2027 |
 
 ## Features
 - **Project showcase:** 7 personal projects plus hackathon builds, with filters (All / Personal / Hackathon), search by language or topic, and a detail dialog for each (problem → what I built → what I learned).
