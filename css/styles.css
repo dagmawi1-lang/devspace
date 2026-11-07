@@ -50,3 +50,4 @@ textarea{width:100%;min-height:220px;background:var(--bg);color:var(--ink);borde
 footer{max-width:1120px;margin:60px auto 0;padding:24px 20px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 @media (max-width:860px){.demo-grid,.cpu-wrap{grid-template-columns:1fr}.nav nav{display:none}.filters input{min-width:0;flex:1}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+.repo-note{grid-column:1/-1}

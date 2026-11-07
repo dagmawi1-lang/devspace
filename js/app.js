@@ -70,17 +70,32 @@ $('#skillList').addEventListener('click', (e) => {
 $('#compList').innerHTML = competitions.map((c) => `<li><span class="when">${esc(c.date)}</span><div><b>${esc(c.event)}</b><span class="muted"> · ${esc(c.project)}</span>${c.result ? `<span class="award">🏆 ${esc(c.result)}</span>` : ''}</div></li>`).join('');
 
 // ---------- GitHub ----------
+// Shows every public repo. When a repo has no description on GitHub, the project's summary from data.js is used,
+// and if GitHub can't be reached the list is built from data.js so the section is never empty.
+const byRepo = new Map(projects.filter((p) => p.repo).map((p) => [p.repo.split('/').pop().toLowerCase(), p]));
+const repoCard = (name, url, desc, meta) => `<a class="card repo" href="${esc(url)}" target="_blank" rel="noopener"><b>${esc(name)}</b><p>${esc(desc)}</p><span class="muted">${esc(meta)}</span></a>`;
+function fallbackRepos(note) {
+  const cards = [...byRepo.entries()].map(([name, p]) => repoCard(name, p.repo, p.summary, p.tags.join(' · '))).join('');
+  $('#repoList').innerHTML = cards + (note ? `<p class="muted repo-note">${note}</p>` : '');
+}
 async function loadRepos() {
   const box = $('#repoList');
-  if (!profile.githubUser) { box.innerHTML = `<p class="muted">Add your GitHub username in <code>js/data.js</code> to show your latest public repositories here.</p>`; return; }
+  if (!profile.githubUser) { box.innerHTML = `<p class="muted">Add your GitHub username in <code>js/data.js</code> to show your public repositories here.</p>`; return; }
   box.innerHTML = '<p class="muted">Loading repositories…</p>';
   try {
-    const r = await fetch(`https://api.github.com/users/${encodeURIComponent(profile.githubUser)}/repos?sort=updated&per_page=6`, { headers: { Accept: 'application/vnd.github+json' } });
-    if (r.status === 403) throw new Error('GitHub rate limit reached. Try again in an hour.');
-    if (!r.ok) throw new Error(`GitHub returned ${r.status}`);
+    const r = await fetch(`https://api.github.com/users/${encodeURIComponent(profile.githubUser)}/repos?sort=updated&per_page=100`, { headers: { Accept: 'application/vnd.github+json' } });
+    if (!r.ok) throw new Error(r.status === 403 ? 'rate limit' : `HTTP ${r.status}`);
     const repos = (await r.json()).filter((x) => !x.fork);
-    box.innerHTML = repos.map((x) => `<a class="card repo" href="${esc(x.html_url)}" target="_blank" rel="noopener"><b>${esc(x.name)}</b><p>${esc(x.description || 'No description')}</p><span class="muted">${esc(x.language || '')} · ★ ${x.stargazers_count} · updated ${new Date(x.updated_at).toLocaleDateString()}</span></a>`).join('') || '<p class="muted">No public repositories yet.</p>';
-  } catch (e) { box.innerHTML = `<p class="muted">Couldn't load GitHub repositories: ${esc(e.message)} <a href="https://github.com/${esc(profile.githubUser)}" target="_blank" rel="noopener">Open GitHub ↗</a></p>`; }
+    if (!repos.length) return fallbackRepos('');
+    box.innerHTML = repos.map((x) => {
+      const p = byRepo.get(x.name.toLowerCase());
+      const desc = x.description || p?.summary || 'No description yet.';
+      const meta = [x.language, `updated ${new Date(x.updated_at).toLocaleDateString()}`].filter(Boolean).join(' · ');
+      return repoCard(x.name, x.html_url, desc, meta);
+    }).join('');
+  } catch {
+    fallbackRepos(`Showing saved project list. <a href="https://github.com/${esc(profile.githubUser)}?tab=repositories" target="_blank" rel="noopener">See everything on GitHub ↗</a>`);
+  }
 }
 loadRepos();
 
