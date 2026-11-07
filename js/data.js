@@ -1,0 +1,98 @@
+// ✏️ Edit this file to personalize the site. Everything on the page is generated from this data.
+export const profile = {
+  name: "Dagmawi Melaku",
+  headline: "Aspiring computer engineer · cybersecurity focus",
+  intro: "I build software that is useful and safe: security monitoring tools, systems projects in C++ and Rust, and community apps built at student hackathons.",
+  location: "United States",
+  githubUser: "dagmawi1-lang",
+  links: [
+    { label: "GitHub", url: "https://github.com/dagmawi1-lang" },
+    // { label: "Devpost", url: "https://devpost.com/yourname" },
+    // { label: "LinkedIn", url: "https://www.linkedin.com/in/yourname" },
+  ],
+  email: "",                               // optional; leave blank to hide
+};
+
+export const skills = [
+  { name: "Python", level: 4, projects: ["Sentinel", "NetWatch", "SecureDB", "DataMind", "SysGuard", "WasteLens"] },
+  { name: "JavaScript / React", level: 4, projects: ["WasteLens", "BridgeUp", "OutbreakIQ", "ProofPath", "FixForward", "DevSpace"] },
+  { name: "SQL", level: 3, projects: ["Sentinel", "NetWatch", "SecureDB", "BridgeUp"] },
+  { name: "C++", level: 3, projects: ["CoreSim"] },
+  { name: "Rust", level: 2, projects: ["MemorySafe"] },
+  { name: "Bash / Linux", level: 3, projects: ["SysGuard"] },
+  { name: "HTML / CSS", level: 4, projects: ["DevSpace", "Sentinel"] },
+  { name: "Node.js", level: 3, projects: ["BridgeUp", "OutbreakIQ", "WasteLens"] },
+];
+
+export const focusAreas = ["Detection engineering", "Secure software design", "Computer architecture", "Networking", "Data analysis", "Memory safety"];
+
+// status: "complete" | "submitted" | "in-progress" | "planned"
+export const projects = [
+  { name: "Sentinel", kind: "personal", tags: ["Python", "SQL", "Cybersecurity"], status: "complete", year: 2026,
+    summary: "Personal security monitoring platform: parses SSH/auth logs, detects brute force, password spraying, and likely account compromise, tracks incidents in SQLite, and has a review dashboard.",
+    problem: "Login logs on a home server or lab machine are thousands of lines long, so real attacks get missed.",
+    built: ["6 detection rules mapped to MITRE ATT&CK", "SQLite incident database with an evidence trail", "Markdown/HTML reports and a Flask dashboard", "13 tests, including zero false positives on clean traffic"],
+    learned: "Thresholds are trade-offs between missed attacks and alert fatigue, and correlating weak signals is what makes them useful.",
+    demo: "logscan", repo: "https://github.com/dagmawi1-lang/sentinel" },
+  { name: "CoreSim", kind: "personal", tags: ["C++", "Computer Architecture"], status: "complete", year: 2026,
+    summary: "CPU instruction simulator for a 16-bit CPU I designed (CS16): two-pass assembler, flags, stack, CALL/RET, interactive stepper, and an HTML trace viewer.",
+    problem: "Fetch–decode–execute, flags, and the stack are abstract until you can watch them change.",
+    built: ["29-instruction ISA with a documented encoding", "Assembler with labels, constants, and line-numbered errors", "Recursive factorial, bubble sort, and Fibonacci programs", "17 tests, clean under AddressSanitizer/UBSan"],
+    learned: "How signed comparison really works (N ≠ V), and why carry and overflow are different flags.",
+    demo: "cpu", repo: "https://github.com/dagmawi1-lang/coresim" },
+  { name: "NetWatch", kind: "personal", tags: ["Python", "SQL", "Networking"], status: "complete", year: 2026,
+    summary: "Network monitoring and simulation: topology-aware outage root-cause analysis, flapping, latency and traffic anomalies, port scans, and rogue devices.",
+    problem: "When a switch dies, a naive monitor raises an alert for every device behind it.",
+    built: ["Simulator with injectable incidents", "Root-cause grouping that suppresses downstream alerts", "Rolling z-score anomaly detection", "HTML report with latency sparklines"],
+    learned: "Statistical and practical significance are both needed to avoid false alarms.", repo: "https://github.com/dagmawi1-lang/netwatch" },
+  { name: "SecureDB", kind: "personal", tags: ["SQL", "Python", "Database Security"], status: "complete", year: 2026,
+    summary: "School-records database with role-based and row-level access, SQL-injection-safe queries, and a tamper-evident hash-chained audit log written by triggers.",
+    problem: "Most data breaches involve misused access, not exotic exploits.",
+    built: ["RBAC + row-level scopes", "Append-only SHA-256 audit chain that detects edits even after triggers are dropped", "8 misuse-detection rules", "Side-by-side injection demo"],
+    learned: "Putting auditing in the database (triggers) catches changes that bypass the application.", repo: "https://github.com/dagmawi1-lang/securedb" },
+  { name: "SysGuard", kind: "personal", tags: ["Bash", "Python", "Linux"], status: "complete", year: 2026,
+    summary: "Bash collector reading /proc plus a Python analyzer that spots crypto-miners in /tmp, fork bombs, memory leaks, CPU hogs, and new open ports.",
+    problem: "Compromised machines often show up first as odd resource use.",
+    built: ["/proc/stat CPU math like top", "Real executable paths via /proc/PID/exe", "9 detection rules with cron-friendly exit codes"],
+    learned: "Linux exposes almost everything as files, and malware often lies about its name but not its path.", repo: "https://github.com/dagmawi1-lang/sysguard" },
+  { name: "MemorySafe", kind: "personal", tags: ["Rust", "Systems"], status: "complete", year: 2026,
+    summary: "Rust demonstrator of ownership, borrowing, safe data structures, RAII, errors, and fearless concurrency, with compile-fail tests proving bugs don't compile.",
+    problem: "Most serious security bugs in C/C++ are memory-safety bugs.",
+    built: ["Stack, ring buffer, and arena graph with zero unsafe code", "Compile-fail tests for use-after-move, dangling refs, and data races", "24 tests, clippy clean"],
+    learned: "The borrow checker caught a real iterator-invalidation bug in my own demo code.", repo: "https://github.com/dagmawi1-lang/memorysafe" },
+  { name: "DataMind", kind: "personal", tags: ["Python", "Data Science"], status: "complete", year: 2026,
+    summary: "Automated data analysis: cleans messy CSV/Excel data with a change log, finds robust patterns, draws charts, and writes a plain-language report.",
+    problem: "Most data is messy, and it's easy to claim patterns that are just noise.",
+    built: ["Type inference and cleaning log", "Spearman, Kruskal–Wallis, and Theil–Sen for robustness", "Self-contained HTML report", "Tested to find nothing in random noise"],
+    learned: "Testing many hypotheses at once needs stricter thresholds.", repo: "https://github.com/dagmawi1-lang/datamind" },
+  { name: "WasteLens", kind: "hackathon", event: "Arbiter Hacks V1", tags: ["React", "Computer Vision", "Python ML"], status: "in-progress", year: 2026,
+    summary: "Waste-sorting assistant: classifies a photo, explains preparation and disposal, lets people correct it, and includes a consent-based dataset and training pipeline.",
+    built: ["Camera/upload classification with confidence and human correction", "Local recycling rules with sources", "Group-aware dataset splits and a training pipeline"], repo: "https://github.com/dagmawi1-lang/wastelens" },
+  { name: "OutbreakIQ", kind: "hackathon", event: "DSH Hacks", tags: ["React", "Express", "Public Health Data"], status: "in-progress", year: 2026,
+    summary: "Explores CDC NNDSS disease-reporting data and flags statistical anomalies as review signals, with clear limits.",
+    built: ["CDC data connector and CSV import", "Rolling-baseline anomaly screening", "Grounded explanation assistant"], repo: "https://github.com/dagmawi1-lang/outbreakiq" },
+  { name: "BridgeUp", kind: "hackathon", event: "CSC Winter Sparkathon", tags: ["React", "Node", "SQLite"], status: "in-progress", year: 2026,
+    summary: "Community support matching with explainable scores, consent-gated private messaging, live updates, and moderation with an audit log.",
+    built: ["Real accounts and role-based permissions", "Live notifications via Server-Sent Events", "Blocking, reporting, and moderator queue"], repo: "https://github.com/dagmawi1-lang/bridgeup" },
+  { name: "ProofPath", kind: "hackathon", event: "STEM2Connect AI Hackathon", tags: ["React", "AI", "Education"], status: "in-progress", year: 2026,
+    summary: "Student research workspace: evidence checklists, a claim map showing supporting vs challenging sources, APA/MLA citations, and an optional AI coach.",
+    built: ["Claim map with evidence balance", "Citation generator and bibliography", "AI coach with local fallback"], repo: "https://github.com/dagmawi1-lang/proofpath" },
+  { name: "FixForward", kind: "hackathon", event: "STEMergent Hacks", tags: ["React", "Civic Tech"], status: "in-progress", year: 2026,
+    summary: "Community maintenance board with duplicate detection, explainable priority, status history, and action-brief export.",
+    built: ["Duplicate detection → 'support this instead'", "Transparent priority breakdown", "Action brief for facilities teams"], repo: "https://github.com/dagmawi1-lang/fixforward" },
+  { name: "ClearTask", kind: "hackathon", event: "Global AI Builder's Challenge", tags: ["React", "AI"], status: "in-progress", year: 2026,
+    summary: "Task planner that breaks assignments into steps with time estimates and optional AI planning.", built: ["Deterministic planner + AI path", "Progress tracking and Markdown export"], repo: "https://github.com/dagmawi1-lang/cleartask" },
+];
+
+// Only list results you actually received. Add awards here after judging.
+export const competitions = [
+  { event: "Arbiter Hacks V1", project: "WasteLens", date: "Nov 2026", result: "" },
+  { event: "STEMergent Hacks", project: "FixForward", date: "Nov 2026", result: "" },
+  { event: "STEM2Connect AI Hackathon", project: "ProofPath", date: "Nov 2026", result: "" },
+  { event: "IceHacks", project: "PhishProof", date: "Nov 2026", result: "" },
+  { event: "NorCal Hacks 27", project: "AccessLens", date: "Nov 2026", result: "" },
+  { event: "Bridge The Gap Hacks", project: "Pathways", date: "Nov 2026", result: "" },
+  { event: "Global AI Builder's Challenge", project: "ClearTask", date: "Nov 2026", result: "" },
+  { event: "CSC Winter Sparkathon", project: "BridgeUp", date: "Winter 2026", result: "" },
+  { event: "Checkpoint 1: Games for Good", project: "KindQuest", date: "Jan 2027", result: "" },
+];
