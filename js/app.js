@@ -67,7 +67,7 @@ $('#skillList').addEventListener('click', (e) => {
 });
 
 // ---------- competitions ----------
-$('#compList').innerHTML = competitions.map((c) => `<li><span class="when">${esc(c.date)}</span><div><b>${esc(c.event)}</b><span class="muted"> · ${esc(c.project)}</span>${c.result ? `<span class="award">🏆 ${esc(c.result)}</span>` : ''}</div></li>`).join('');
+$('#compList').innerHTML = competitions.map((c) => `<li><span class="when">${esc(c.date)}</span><div>${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener"><b>${esc(c.event)}</b> ↗</a>` : `<b>${esc(c.event)}</b>`}<span class="muted"> · ${esc(c.project)}</span>${c.result ? `<span class="award">🏆 ${esc(c.result)}</span>` : ''}</div></li>`).join('');
 
 // ---------- GitHub ----------
 // Shows every public repo. When a repo has no description on GitHub, the project's summary from data.js is used,

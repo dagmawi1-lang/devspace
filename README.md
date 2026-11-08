@@ -33,16 +33,16 @@ A fast, accessible portfolio site in **plain HTML, CSS, and JavaScript** (no fra
 
 | Competition | Project | When |
 |---|---|---|
-| Arbiter Hacks V1 | WasteLens | Nov 2026 |
-| DSH Hacks | OutbreakIQ | 2026 |
-| STEMergent Hacks | FixForward | Nov 2026 |
-| STEM2Connect AI Hackathon | ProofPath | Nov 2026 |
-| IceHacks | PhishProof | Nov 2026 |
-| NorCal Hacks 27 | AccessLens | Nov 2026 |
-| Bridge The Gap Hacks | Pathways | Nov 2026 |
-| Global AI Builder's Challenge | ClearTask | Nov 2026 |
-| CSC Winter Sparkathon | BridgeUp | Winter 2026 |
-| Checkpoint 1: Games for Good | KindQuest | Jan 2027 |
+| [DSH Hacks V2 (AI × Healthcare)](https://dsh-hacks-v2.devpost.com/) | OutbreakIQ | Nov 2026 |
+| [STEMergent Hacks](https://stemergent-hacks.devpost.com/) | FixForward | Nov 2026 |
+| [IceHacks](https://icehacks.devpost.com/) | PhishProof | Nov 2026 |
+| [NorCal Hacks 27](https://norcal-hacks-27.devpost.com/) | AccessLens | Nov 2026 |
+| [Bridge The Gap (SQ Hacks)](https://sq-hacks.devpost.com/) | Pathways | Nov 2026 |
+| [STEM2Connect AI Hackathon](https://stem2connect-online-hackathon.devpost.com/) | ProofPath | Nov 2026 |
+| [Global AI Builder's Challenge](https://global-ai-builders-challenge.devpost.com/) | ClearTask | Nov 2026 |
+| [CSC Winter Sparkathon](https://csc-winter-sparkathon.devpost.com/) | BridgeUp | Oct–Nov 2026 |
+| [Arbiter Hacks V1](https://arbiter-hacks-v1.devpost.com/) | WasteLens | Oct–Dec 2026 |
+| [Checkpoint 1: Games for Good](https://checkpoint-1.devpost.com/) | KindQuest | Jan 2027 |
 
 ## Features
 - **Project showcase:** 7 personal projects plus hackathon builds, with filters (All / Personal / Hackathon), search by language or topic, and a detail dialog for each (problem → what I built → what I learned).
