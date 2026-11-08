@@ -11,7 +11,7 @@ a{color:var(--accent)}code,.mono{font-family:var(--mono);font-size:.9em}.muted{c
 .theme{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:6px 10px;cursor:pointer}
 main{max-width:1120px;margin:auto;padding:0 20px}section{padding:56px 0 8px;scroll-margin-top:70px}
 .hero{padding:80px 0 30px}.kicker{color:var(--accent);font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;margin:0}
-.hero h1{font-size:clamp(40px,7vw,72px);line-height:1.02;margin:10px 0 14px;letter-spacing:-.03em;background:linear-gradient(90deg,var(--ink),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1{font-size:clamp(40px,7vw,72px);line-height:1.15;padding-bottom:.12em;margin:10px 0 2px;letter-spacing:-.03em;background:linear-gradient(90deg,var(--ink),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .intro{font-size:19px;max-width:720px;color:var(--muted)}
 .hero-stats{display:flex;gap:28px;margin:26px 0;flex-wrap:wrap}.hero-stats div{display:flex;flex-direction:column}.hero-stats b{font-size:30px}.hero-stats span{color:var(--muted);font-size:13px}
 .hero-links{display:flex;gap:10px;flex-wrap:wrap}
