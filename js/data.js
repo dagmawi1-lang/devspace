@@ -108,10 +108,10 @@ export const projects = [
     role: "Solo developer \u00b7 AI-assisted", contributions: ["Planned the portfolio structure and wrote the project write-ups", "Ported CoreSim's CPU and Sentinel's detection rules to JavaScript for the live demos"],
     summary: "This portfolio: a framework-free site with live in-browser demos of CoreSim and Sentinel, project write-ups, and a live list of my GitHub repos.",
     built: ["Project filters, search, and detail dialogs", "JavaScript ports of the CS16 CPU and Sentinel's detection rules", "Accessible, responsive, light/dark"], repo: "https://github.com/dagmawi1-lang/devspace" },
-  { name: "CivicEco", kind: "personal", tags: ["React", "Maps", "Environment"], status: "in-progress", year: 2026,
+  { name: "CivicEco", kind: "hackathon", event: "Congressional App Challenge 2026", tags: ["React", "Maps", "Environment"], status: "submitted", year: 2026,
     summary: "Environmental intelligence platform: report local environmental issues on a map, verify evidence with community confirmations, spot hotspots and early warnings, and coordinate response plans.",
     built: ["Issue reporting with interactive maps", "Accounts and persistent backend storage", "Evidence verification, comments, follows, and notifications", "Hotspot analytics and community response plans"], repo: "" },
-  { name: "SchoolSync", kind: "personal", tags: ["React", "Education"], status: "in-progress", year: 2026,
+  { name: "SchoolSync", kind: "hackathon", event: "Neighborhood Hacks", tags: ["React", "Education"], status: "submitted", year: 2026,
     summary: "Student productivity platform: dashboard, announcements, study resources, college planning, scholarships, and clubs in one place.",
     built: ["Student dashboard and announcements", "College planning and scholarship tracker", "Events, clubs, profile, and dark mode"], repo: "" },
   { name: "PhishProof", kind: "hackathon", event: "IceHacks", tags: ["Cybersecurity", "Education"], status: "planned", year: 2026,
@@ -126,6 +126,8 @@ export const projects = [
 
 // Only list results you actually received. Add awards here after judging.
 export const competitions = [
+  { event: "Congressional App Challenge 2026", project: "CivicEco", date: "Oct 2026", url: "https://www.congressionalappchallenge.us/", result: "" },
+  { event: "Neighborhood Hacks", project: "SchoolSync", date: "2026", url: "", result: "" },
   { event: "DSH Hacks V2 (AI × Healthcare)", project: "OutbreakIQ", date: "Nov 2026", url: "https://dsh-hacks-v2.devpost.com/", result: "" },
   { event: "STEMergent Hacks", project: "FixForward", date: "Nov 2026", url: "https://stemergent-hacks.devpost.com/", result: "" },
   { event: "IceHacks", project: "PhishProof", date: "Nov 2026", url: "https://icehacks.devpost.com/", result: "" },
