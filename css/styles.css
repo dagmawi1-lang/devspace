@@ -51,3 +51,12 @@ footer{max-width:1120px;margin:60px auto 0;padding:24px 20px 40px;border-top:1px
 @media (max-width:860px){.demo-grid,.cpu-wrap{grid-template-columns:1fr}.nav nav{display:none}.filters input{min-width:0;flex:1}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
 .repo-note{grid-column:1/-1}
+/* screenshots + contributions */
+.project.has-shot{padding-top:12px}
+.shot{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel2);margin-bottom:12px;cursor:pointer}
+.shot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left;transition:transform .25s}
+.shot:hover img{transform:scale(1.02)}
+.role{font-size:13px!important;color:var(--accent2)!important;margin:0 0 10px!important}
+.dlg-shot{margin:12px 0 16px}.dlg-shot img{width:100%;border-radius:10px;border:1px solid var(--line)}.dlg-shot figcaption{font-size:12px;color:var(--muted);margin-top:6px}
+dialog{max-width:760px}
+@media (prefers-reduced-motion:reduce){.shot img{transition:none}}

@@ -2,6 +2,13 @@
 
 **Live site:** https://dagmawi1-lang.github.io/devspace/
 
+## My role & contributions
+
+**Solo developer · AI-assisted**
+
+- Planned the portfolio structure and wrote the project write-ups
+- Ported CoreSim's CPU and Sentinel's detection rules to JavaScript for the live demos
+
 A fast, accessible portfolio site in **plain HTML, CSS, and JavaScript** (no frameworks, no build step). It brings all my projects together in one place for admissions reviewers, mentors, and hackathon judges.
 
 ## All projects

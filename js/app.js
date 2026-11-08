@@ -30,11 +30,12 @@ $('#footer').innerHTML = `© ${new Date().getFullYear()} ${esc(profile.name)} ·
 let filter = 'all', query = '';
 function renderProjects() {
   const q = query.trim().toLowerCase();
-  const list = projects.filter((p) => (filter === 'all' || p.kind === filter) && (!q || [p.name, p.summary, p.event, ...p.tags].join(' ').toLowerCase().includes(q)));
+  const list = [...projects].sort((a, b) => Number(!!b.image) - Number(!!a.image)).filter((p) => (filter === 'all' || p.kind === filter) && (!q || [p.name, p.summary, p.event, ...p.tags].join(' ').toLowerCase().includes(q)));
   $('#projectGrid').innerHTML = list.map((p) => `
-    <article class="card project" data-kind="${p.kind}">
+    <article class="card project${p.image ? ' has-shot' : ''}" data-kind="${p.kind}">
+      ${p.image ? `<button class="shot" data-open="${esc(p.name)}" aria-label="Open ${esc(p.name)} details"><img src="${esc(p.image)}" alt="${esc(p.imageAlt || p.name + ' screenshot')}" loading="lazy" width="1120" height="700"></button>` : ''}
       <div class="meta"><span class="badge ${p.kind}">${p.kind === 'hackathon' ? esc(p.event) : 'Personal project'}</span><span class="status s-${p.status}">${STATUS[p.status]}</span></div>
-      <h3>${esc(p.name)}</h3><p>${esc(p.summary)}</p>
+      <h3>${esc(p.name)}</h3><p>${esc(p.summary)}</p>${p.role ? `<p class="role">👤 ${esc(p.role)}</p>` : ''}
       <ul class="tags">${p.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>
       <div class="actions"><button class="link" data-open="${esc(p.name)}">Read more →</button>${p.demo ? `<a class="link" href="#demos">Try demo</a>` : ''}${p.repo ? `<a class="link" href="${esc(p.repo)}" target="_blank" rel="noopener">Code ↗</a>` : ''}</div>
     </article>`).join('');
@@ -49,7 +50,8 @@ $('#search').addEventListener('input', (e) => { query = e.target.value; renderPr
 $('#projectGrid').addEventListener('click', (e) => {
   const name = e.target.closest('[data-open]')?.dataset.open; if (!name) return;
   const p = projects.find((x) => x.name === name);
-  $('#dlgBody').innerHTML = `<p class="kicker">${p.kind === 'hackathon' ? esc(p.event) : 'Personal project'} · ${p.year} · ${STATUS[p.status]}</p><h2 id="dlgTitle">${esc(p.name)}</h2><p>${esc(p.summary)}</p>
+  $('#dlgBody').innerHTML = `<p class="kicker">${p.kind === 'hackathon' ? esc(p.event) : 'Personal project'} · ${p.year} · ${STATUS[p.status]}</p><h2 id="dlgTitle">${esc(p.name)}</h2>${p.image ? `<figure class="dlg-shot"><img src="${esc(p.image)}" alt="${esc(p.imageAlt || '')}"><figcaption>${esc(p.imageAlt || '')}</figcaption></figure>` : ''}<p>${esc(p.summary)}</p>
+    ${p.contributions?.length ? `<h3>My role &amp; contributions</h3><p class="role">${esc(p.role || '')}</p><ul>${p.contributions.map((c) => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
     ${p.problem ? `<h3>Problem</h3><p>${esc(p.problem)}</p>` : ''}${p.built?.length ? `<h3>What I built</h3><ul>${p.built.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>` : ''}
     ${p.learned ? `<h3>What I learned</h3><p>${esc(p.learned)}</p>` : ''}<ul class="tags">${p.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>
     ${p.repo ? `<p><a class="btn" href="${esc(p.repo)}" target="_blank" rel="noopener">View code ↗</a></p>` : ''}`;
