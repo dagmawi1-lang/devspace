@@ -1,4 +1,4 @@
-# {devspace} — developer portfolio
+# DevSpace — developer portfolio
 
 **Live site:** https://dagmawi1-lang.github.io/devspace/
 
@@ -15,6 +15,8 @@ A fast, accessible portfolio site in **plain HTML, CSS, and JavaScript** (no fra
 
 | Project | Type | Status | Description |
 |---|---|---|---|
+| [Congressional App Challenge 2026](https://www.congressionalappchallenge.us/) | CivicEco | Oct 2026 |
+| Neighborhood Hacks | SchoolSync | 2026 |
 | [Sentinel](https://github.com/dagmawi1-lang/sentinel) | Personal | ✅ Complete | Personal security monitoring platform: parses SSH/auth logs, detects brute force, password spraying, and likely account compromise, tracks incidents in SQLite, and has a review dashboard. |
 | [CoreSim](https://github.com/dagmawi1-lang/coresim) | Personal | ✅ Complete | CPU instruction simulator for a 16-bit CPU I designed (CS16): two-pass assembler, flags, stack, CALL/RET, interactive stepper, and an HTML trace viewer. |
 | [NetWatch](https://github.com/dagmawi1-lang/netwatch) | Personal | ✅ Complete | Network monitoring and simulation: topology-aware outage root-cause analysis, flapping, latency and traffic anomalies, port scans, and rogue devices. |
@@ -29,14 +31,14 @@ A fast, accessible portfolio site in **plain HTML, CSS, and JavaScript** (no fra
 | [FixForward](https://github.com/dagmawi1-lang/fixforward) | STEMergent Hacks | 🛠️ In progress | Community maintenance board with duplicate detection, explainable priority, status history, and action-brief export. |
 | [ClearTask](https://github.com/dagmawi1-lang/cleartask) | Global AI Builder's Challenge | 🛠️ In progress | Task planner that breaks assignments into steps with time estimates and optional AI planning. |
 | [DevSpace](https://github.com/dagmawi1-lang/devspace) | Personal | ✅ Complete | This portfolio: a framework-free site with live in-browser demos of CoreSim and Sentinel, project write-ups, and a live list of my GitHub repos. |
-| CivicEco | Personal | 🛠️ In progress | Environmental intelligence platform: report local environmental issues on a map, verify evidence with community confirmations, spot hotspots and early warnings, and coordinate response plans. |
-| SchoolSync | Personal | 🛠️ In progress | Student productivity platform: dashboard, announcements, study resources, college planning, scholarships, and clubs in one place. |
+| CivicEco | Congressional App Challenge 2026 | 📨 Submitted | Environmental intelligence platform: report local environmental issues on a map, verify evidence with community confirmations, spot hotspots and early warnings, and coordinate response plans. |
+| SchoolSync | Neighborhood Hacks | 📨 Submitted | Student productivity platform: dashboard, announcements, study resources, college planning, scholarships, and clubs in one place. |
 | PhishProof | IceHacks | 🗓️ Planned | Phishing-awareness training that teaches people to spot the warning signs in realistic, safe practice messages. |
 | AccessLens | NorCal Hacks 27 | 🗓️ Planned | Privacy-first accessibility review companion that helps makers find and fix accessibility problems. |
 | Pathways | Bridge The Gap Hacks | 🗓️ Planned | Helps students discover opportunities such as programs, scholarships, and competitions, and plan the steps to reach them. |
 | KindQuest | Checkpoint 1: Games for Good | 🗓️ Planned | Interactive game about teamwork and inclusion. |
 
-## Competitions (10)
+## Competitions (12)
 
 | Competition | Project | When |
 |---|---|---|
@@ -57,17 +59,12 @@ A fast, accessible portfolio site in **plain HTML, CSS, and JavaScript** (no fra
   - **CoreSim CPU:** a JavaScript port of my CS16 CPU. Edit the assembly, step through it, and watch registers and flags change.
   - **Sentinel log scanner:** paste SSH `auth.log` lines to detect brute force, password spraying, and likely compromise in the browser.
 - **Skills:** each language links to the projects that use it.
-- **Competitions timeline:** shows only results actually received (add awards in `js/data.js`).
+- **Competitions timeline:** every event with a link, plus results once judging is complete.
 - **GitHub integration:** lists your latest public repos via the GitHub REST API, and handles rate limits and offline use.
 - Light/dark theme (follows the system and remembers your choice), skip link, keyboard-friendly dialog, `prefers-reduced-motion`, and responsive down to phones.
 
-## Personalize (5 minutes)
-Edit **`js/data.js`**:
-1. `profile.name`, `headline`, `intro`
-2. `profile.githubUser`: your GitHub username (turns on the live repo list)
-3. `profile.links`: GitHub, Devpost, LinkedIn
-4. each project's `repo` URL once it's on GitHub
-5. `competitions[].result` after judging (only real results)
+## Editing content
+All site content (profile, projects, skills, and competitions) lives in **`js/data.js`**. The rendering code in `js/app.js` doesn't need to change when content is updated.
 
 ## Run locally
 Modules need a web server (not `file://`):
@@ -75,10 +72,8 @@ Modules need a web server (not `file://`):
 python3 -m http.server 8000   # then open http://localhost:8000
 ```
 
-## Deploy free on GitHub Pages
-1. Create a repo named `<your-username>.github.io` and push these files to it.
-2. In the repo, go to Settings → Pages → Source: *Deploy from a branch* → `main` / root.
-3. Your site will be live at `https://<your-username>.github.io`.
+## Deployment
+The site is static, so it deploys directly with GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / root**. It is served at https://dagmawi1-lang.github.io/devspace/.
 
 ## Files
 `index.html` · `css/styles.css` · `js/data.js` (content) · `js/app.js` (rendering) · `js/cpu.js` (CS16 port) · `js/logscan.js` (Sentinel rules port)
